@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08110e">
+  <title>THE UNDERCROFT // Text Adventure</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="terminal-shell">
+    <header class="topbar">
+      <div class="brand"><span class="status-dot" aria-hidden="true"></span> THE UNDERCROFT</div>
+      <div class="topbar-meta">SESSION <span id="turn-count">001</span></div>
+    </header>
+
+    <section class="intro" aria-labelledby="game-title">
+      <p class="eyebrow">ARCHIVE NODE 07 // TEXT-BASED EXPLORATION</p>
+      <h1 id="game-title">The door remembers.</h1>
+      <p class="lede">Find the brass key, unlock the sealed passage, and claim what waits beneath the old station.</p>
+    </section>
+
+    <div class="game-layout">
+      <section class="screen-panel" aria-label="Adventure transcript">
+        <div class="screen-heading">
+          <span>LIVE TRANSCRIPT</span>
+          <span class="signal">● SIGNAL STABLE</span>
+        </div>
+        <div id="output" class="output" role="log" aria-live="polite" aria-label="Game output"></div>
+        <form id="command-form" class="command-line" autocomplete="off">
+          <label for="command-input"><span class="prompt-mark">&gt;</span><span class="sr-only">Enter command</span></label>
+          <input id="command-input" name="command" type="text" placeholder="Type a command..." spellcheck="false" autofocus>
+          <button type="submit" aria-label="Send command">SEND</button>
+        </form>
+      </section>
+
+      <aside class="sidebar" aria-label="Game status">
+        <section class="status-block">
+          <p class="side-label">CURRENT LOCATION</p>
+          <h2 id="location-name">The Entrance</h2>
+          <p id="location-detail">A cold stairwell descends into darkness.</p>
+        </section>
+        <section class="status-block">
+          <p class="side-label">CARRIED ITEMS</p>
+          <ul id="inventory-list" class="inventory-list"><li class="empty-state">Nothing yet</li></ul>
+        </section>
+        <section class="status-block objective">
+          <p class="side-label">OBJECTIVE</p>
+          <p>Unlock the sealed door and reach the treasure room.</p>
+        </section>
+        <button id="reset-button" class="reset-button" type="button">RESTART SESSION</button>
+      </aside>
+    </div>
+
+    <footer class="footer-note">COMMANDS: GO &lt;DIRECTION&gt; · TAKE &lt;ITEM&gt; · USE &lt;ITEM&gt; · LOOK · INVENTORY · HELP</footer>
+  </main>
+</body>
+</html>
